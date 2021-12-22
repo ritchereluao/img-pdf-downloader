@@ -34,7 +34,8 @@ while chapter != 337:
         with open(f"{image_path}/Page_{n}.jpg", "wb") as file:
             file.write(response.content)
             n += 1
-
+    
+    # Converts images to single PDF file
     with open(f"{heading}.pdf", "wb") as file:
         file.write(img2pdf.convert(natsorted(glob(f"{image_path}/*.jpg"))))
 
